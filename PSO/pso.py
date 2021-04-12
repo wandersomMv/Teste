@@ -68,7 +68,7 @@ class PSO:
         plt.show()
 
 
-pso = PSO(list_city,200, 0.5, 0.8,0.5, 100)           
+pso = PSO(list_city,200, 0.5, 0.8,0.5, 250)           
 
 pso.runPso()
 
