@@ -17,13 +17,13 @@ class Particula:
   def calculoPbest(self,cpy,gbest):
      
    
-     ft = Fitness(cpy).route_fitness()
+     ft = Fitness(deepcopy(cpy)).route_fitness()
     #  self.fitness = ft
-     if  ft < self.pbest.fitness: # achou um melhor 
+     if  ft > self.pbest.fitness: # achou um melhor 
         self.pbest.posicao = deepcopy(cpy)
         self.fitness = deepcopy(ft)
 
-     if(ft < gbest.fitness):
+     if(ft > gbest.fitness):
        gbest.posicao = deepcopy(cpy)
        gbest.fitness = deepcopy(ft)
 

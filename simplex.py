@@ -86,7 +86,28 @@ class Simplex:
         self.print_table()
 
 
+""" UM SAPATEIRO FAZ 6 SAPATOS POR HORA, SE FIZER SOMENTE SAPATOS, E 5 CINTOS POR HORA
+    SE FIZER SOMENTE CINTOS. ELE GASTA 2 UNIDADES DE COURO PARA FABRICAR 1 UNIDADE DE SAPATO
+    E 1 UNIDADE DE COURO PARA FABRICAR UMA UNIDADE DE CINTO. SABENDO-SE QUE O TOTAL DISPONÍVEL
+    DE COURO É DE 6 UNIDADES E QUE O LUCRO UNITÁRIO POR SAPATO É DE 5 UNIDADES MONETÁRIAS E O DO
+    CINTO DUAS UNIDADES MONETÁRIAS, PEDE-SE: O MODELO DO SISTEMA DE PRODUÇÃO DO SAPATEIRO, SE O 
+    OBJETIVO É MAXIMIZAR SEU LUCRO POR HORA"""
 
+
+"""
+MAX FO: Z = 5x + 2y
+SA:
+        2x + y   <= 6
+        10x +12y <= 60
+        x,y >= 0
+
+FORMA SIMPLEX:
+    Z - 5x -2y = 0
+
+    2x +  y   + f1  =  6
+    10x + 12y + f2 = 60
+
+"""
 simplex = Simplex()
 simplex.set_objective_funtion([1,-5,-2,0,0,0])
 simplex.add_restrictions([0,2,1,1,0,6])

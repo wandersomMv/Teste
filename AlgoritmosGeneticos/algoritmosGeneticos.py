@@ -5,7 +5,7 @@ from Fitness import Fitness
 from City import City
 import matplotlib.pyplot as plt
 import operator
-
+import time
 
 class AGviajante:
 
@@ -152,7 +152,9 @@ class AGviajante:
         for r in bestRoute:
            x.append(r.x)
            y.append(r.y)
-        
+        x.append(bestRoute[0].x)
+        y.append(bestRoute[0].y)
+
         plt.figure(1)
         plt.subplot(211)
         plt.plot(x,y,'o')
@@ -167,4 +169,8 @@ class AGviajante:
 
 ag = AGviajante()
 berlin = [City(city.split(",")[0], city.split(",")[-1].replace("\n",""))  for city in open("cidades.txt", "r")] # ler as cidades
+inicio = time.time()
 ag.geneticAlgorithmPlot(population = berlin,popSize=200, eliteSize=55, mutationRate=0.001, generations = 800)
+fim = time.time()
+print("Tempo de execução: {}".format(fim - inicio))
+# ag.geneticAlgorithmPlot(population = berlin,popSize=10, eliteSize=5, mutationRate=0.001, generations = 10)
